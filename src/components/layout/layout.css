@@ -1,0 +1,39 @@
+div#___gatsby {
+  height: 100%;
+}
+
+div[role='group'] {
+  height: 100%;
+}
+
+.wrapper {
+  position: relative;
+  margin: 0 auto;
+  max-width: 60rem;
+  min-height: 100%;
+  box-sizing: border-box;
+  padding: 0 30px 120px;
+  background-color: var(--content-background-color);
+  transition: background-color 0.5s ease;
+}
+
+footer {
+  width: 100%;
+  position: absolute;
+  left: 0;
+  bottom: 24px;
+  margin: auto;
+  text-align: center;
+}
+
+.side-bar > div {
+  width: 100%;
+  margin-top: -12px;
+}
+
+@media only screen and (max-width: 767.99px) {
+  .wrapper,
+  .header-wrapper {
+    max-width: 40rem;
+  }
+}

@@ -1,0 +1,73 @@
+#header {
+  display: flex;
+  margin-bottom: 48px;
+  height: 64px;
+  align-items: center;
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
+
+#header span#logo {
+  overflow: hidden;
+  flex-grow: 1;
+  height: 100%;
+  line-height: 64px;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+#header span#logo div.gatsby-image-wrapper {
+  vertical-align: middle;
+  height: 32px;
+  margin: 0 16px 0 0;
+}
+
+#header span#logo a#name {
+  vertical-align: middle;
+  font-size: 18px;
+  color: var(--text-color);
+  transition: color 0.5s ease;
+}
+
+#header #dark-switch {
+  flex-grow: 0;
+}
+
+#header #mobile-menu {
+  display: none;
+  position: absolute;
+  top: 25px;
+  right: 30px;
+  z-index: 1;
+  color: var(--text-color);
+}
+
+@media only screen and (max-width: 767.99px) {
+  #header {
+    text-align: center;
+  }
+
+  #header span#logo {
+    float: initial;
+  }
+
+  #header #mobile-menu {
+    display: block;
+  }
+
+  #header #dark-switch {
+    display: none;
+  }
+}
+
+/* Override */
+.ant-popover-arrow {
+  border-top-color: var(--content-background-color) !important;
+  border-left-color: var(--content-background-color) !important;
+  transition: border-top-color 0.5s ease, border-left-color 0.5s ease;
+}
+
+.ant-popover-inner-content {
+  background-color: var(--content-background-color);
+  box-shadow: var(--box-shadow);
+  transition: background-color 0.5s ease, box-shadow 0.5s ease;
+}
