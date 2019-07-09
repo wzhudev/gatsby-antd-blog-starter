@@ -2,13 +2,12 @@
   "name": "gatsby-antd-blog-starter",
   "private": true,
   "description": "A starter for a blog powered by Gatsby and Markdown",
-  "version": "0.1.0",
+  "version": "0.0.1",
   "authors": [
-    "Wendell Hu<wendzhue@gmail.com>",
-    "NG-ZORRO team"
+    "Wendell Hu<wendzhue@gmail.com>"
   ],
   "bugs": {
-    "url": "https://github.com/gatsbyjs/gatsby/issues"
+    "url": "https://github.com/silicic-acid/gatsby-antd-blog-starter/issues"
   },
   "dependencies": {
     "antd": "^3.19.2",
@@ -46,15 +45,18 @@
     "lodash": "^4.17.11",
     "prettier": "^1.17.1"
   },
-  "homepage": "https://github.com/gatsbyjs/gatsby-starter-blog#readme",
+  "homepage": "https://github.com/silicic-acid/gatsby-antd-blog-starter/issues",
   "keywords": [
-    "gatsby"
+    "gatsby",
+    "antd",
+    "blog",
+    "starter"
   ],
   "license": "MIT",
   "main": "n/a",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/gatsbyjs/gatsby-starter-blog.git"
+    "url": "git+https://github.com/silicic-acid/gatsby-antd-blog-starter.git"
   },
   "scripts": {
     "build": "gatsby build --prefix-paths",
@@ -62,7 +64,6 @@
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
-    "serve": "gatsby serve",
-    "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\""
+    "serve": "gatsby serve"
   }
 }
