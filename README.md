@@ -54,6 +54,7 @@ You can use these properties for an article:
 - Multiple languages
 - Categories & Tags
 - RSS
+- Integration with [Now](https://zeit.co)
 
 ### 🌛 Dark Mode
 
