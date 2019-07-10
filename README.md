@@ -62,6 +62,10 @@ This starter provides a build-in **dark mode**.
 
 ![](./img/dark.png)
 
+### Integration with Now
+
+This starter comes with integration with Now. If you don't want to use Now, you can remove now.json and the script `now-build` in package.json.
+
 ## 🎉 Users
 
 - [The official blog of team NG-ZORRO](https://ng.ant.design/blog)
