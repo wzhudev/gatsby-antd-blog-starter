@@ -6,6 +6,8 @@ gatsby-antd-blog-starter
 
 Use this boilerplate to build your blog with [Ant Design](https://ant.design) flavor!
 
+[Demo](https://gatsby-antd-blog-starter.silicic-acid.now.sh/)
+
 ## 🚀 Quick Start
 
 ### Installation
