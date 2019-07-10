@@ -57,10 +57,9 @@
   },
   "scripts": {
     "build": "gatsby build --prefix-paths",
-    "dev": "yarn develop",
     "develop": "gatsby develop",
     "format": "prettier --write src/**/*.{js,jsx}",
-    "start": "npm run develop",
+    "start": "yarn develop",
     "serve": "gatsby serve"
   }
 }
