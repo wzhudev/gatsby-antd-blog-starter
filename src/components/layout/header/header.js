@@ -39,9 +39,7 @@ export default class Header extends React.Component {
 
   loadDarkModeAsIs = () => {
     if (windowGlobal) {
-      return (
-        windowGlobal.localStorage.getItem('ng-zorro-blog.darkMode') === 'true'
-      )
+      return windowGlobal.localStorage.getItem('darkMode') === 'true'
     }
 
     return false
@@ -49,7 +47,7 @@ export default class Header extends React.Component {
 
   storeDarkMode = dark => {
     if (windowGlobal) {
-      return windowGlobal.localStorage.setItem('ng-zorro-blog.darkMode', dark)
+      return windowGlobal.localStorage.setItem('darkMode', dark)
     }
   }
 
@@ -85,23 +83,27 @@ export default class Header extends React.Component {
         <span id="logo">
           <StaticQuery
             query={headerQuery}
-            render={data => {
-              return (
+            render={data => (
+              <React.Fragment>
                 <Image
                   fixed={data.file.childImageSharp.fixed}
                   imgStyle={{ borderRadius: '50%' }}
-                ></Image>
-              )
-            }}
-          ></StaticQuery>
-          <Link
-            to={
-              langKey ? (langKey !== defaultLangKey ? `/${langKey}` : `/`) : '/'
-            }
-            id="name"
-          >
-            {title || 'NG-ZORRO BLOG'}
-          </Link>
+                />
+                <Link
+                  to={
+                    langKey
+                      ? langKey !== defaultLangKey
+                        ? `/${langKey}`
+                        : `/`
+                      : '/'
+                  }
+                  id="name"
+                >
+                  {title || data.site.siteMetadata.title}
+                </Link>
+              </React.Fragment>
+            )}
+          />
         </span>
         {this.renderSwitch()}
         <Popover
@@ -119,6 +121,13 @@ export default class Header extends React.Component {
 
 const headerQuery = graphql`
   query HeaderQuery {
+    site {
+      siteMetadata {
+        author
+        title
+      }
+    }
+
     file(relativePath: { eq: "logo.png" }) {
       childImageSharp {
         fixed(width: 32, height: 32) {

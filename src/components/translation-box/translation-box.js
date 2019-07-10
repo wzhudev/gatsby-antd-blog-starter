@@ -9,10 +9,11 @@ class TranslationBox extends React.Component {
   render() {
     const { slug, translations, langKey } = this.props
     const isDefaultLang = langKey === defaultLangKey
-
     const originalSlug = isDefaultLang ? slug : slug.replace(`/${langKey}`, '')
-    const originalDest = `https://github.com/NG-ZORRO/blog/tree/master/content/blog${originalSlug}index.md`
-    const sourceCodeDest = `https://github.com/NG-ZORRO/blog/tree/master/content/blog${originalSlug}index.${langKey}.md`
+
+    // TODO: change this to your blog
+    const originalDest = `https://github.com/silicic-acid/gatsby-antd-blog-starter/tree/master/content/blog${originalSlug}index.md`
+    const sourceCodeDest = `https://github.com/silicic-acid/gatsby-antd-blog-starter/tree/master/content/blog${originalSlug}index.${langKey}.md`
 
     return isDefaultLang ? (
       <Alert

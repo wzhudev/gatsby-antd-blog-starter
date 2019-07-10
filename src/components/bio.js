@@ -1,22 +1,13 @@
-/**
- * Bio component that queries for data
- * with Gatsby's StaticQuery component
- *
- * See: https://www.gatsbyjs.org/docs/static-query/
- */
-
 import React from 'react'
 import { StaticQuery, graphql } from 'gatsby'
 import Image from 'gatsby-image'
 
 function Bio(props) {
-  const { isMember } = props
-
   return (
     <StaticQuery
       query={bioQuery}
       render={data => {
-        const { author, social } = data.site.siteMetadata
+        const { social, title } = data.site.siteMetadata
         return (
           <div
             style={{
@@ -32,13 +23,9 @@ function Bio(props) {
               imgStyle={{
                 borderRadius: `50%`,
               }}
-            ></Image>
+            />
             <p style={{ marginTop: -6 }}>
-              {author
-                ? isMember
-                  ? `Written by NG-ZORRO team member ${author}.`
-                  : `Written by ${author}.`
-                : 'You are reading blogs published on NG-ZORRO Blog.'}{' '}
+              You are reading blogs published on ${title}.
               <br />
               <a
                 href={`https://twitter.com/${social.twitter}`}
@@ -60,6 +47,7 @@ const bioQuery = graphql`
     site {
       siteMetadata {
         author
+        title
         social {
           twitter
         }

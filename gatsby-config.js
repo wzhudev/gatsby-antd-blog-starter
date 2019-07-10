@@ -1,14 +1,17 @@
+const siteMetadata = {
+  title: `Gatsby & Antd Blog Starter`,
+  author: `Wendell Hu`,
+  description: `A blog starter for Gatsby with Ant Design flavor!`,
+  siteUrl: `https://ng.ant.design/blog`,
+  social: {
+    twitter: `wendzhue`,
+    github: `wendzhue`,
+  },
+}
+
 module.exports = {
   pathPrefix: `/`,
-  siteMetadata: {
-    title: `Gatsby & Antd Blog Starter`,
-    author: `Wendell Hu`,
-    description: `A blog starter for Gatsby with Ant Design flavor!`,
-    siteUrl: `https://ng.ant.design/blog`,
-    social: {
-      twitter: `wendzhue`,
-    },
-  },
+  siteMetadata,
   plugins: [
     {
       resolve: `gatsby-source-filesystem`,
@@ -89,7 +92,9 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to blog at ng-zorro blog. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to blog at ${
+                  siteMetadata.title
+                }. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `
                 let html = edge.node.html
@@ -133,7 +138,7 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: 'NG-ZORRO Blog RSS Feed',
+            title: `${siteMetadata.title} RSS Feed`,
           },
         ],
       },
